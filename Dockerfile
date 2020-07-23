@@ -64,7 +64,5 @@ RUN apt install supervisor cron -y \
     && mkdir /app
 
 ADD image/start.sh /
-WORKDIR /app
-VOLUME /app
 
 # Install your laravel application here
