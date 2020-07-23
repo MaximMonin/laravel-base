@@ -57,8 +57,6 @@ RUN apt-get update \
  && apt-get remove libgmp-dev libgnutls28-dev libhashkit-dev libidn2-dev libmariadb-dev libp11-kit-dev libsasl2-dev libtasn1-6-dev nettle-dev -y \
  && apt-get update && apt upgrade -y && apt-get install procps -y
 
-COPY image/php-add.ini /usr/local/etc/php/conf.d/
-
 # Install supervisor, cron, ssmtp mail
 RUN apt install supervisor cron -y \
     && echo 'deb http://deb.debian.org/debian stretch main' >> /etc/apt/sources.list \
