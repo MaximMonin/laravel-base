@@ -65,4 +65,6 @@ RUN apt install supervisor cron -y \
 
 ADD image/start.sh /
 
+CMD ["php-fpm"]
+
 # Install your laravel application here
