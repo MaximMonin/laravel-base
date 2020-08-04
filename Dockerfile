@@ -13,6 +13,7 @@ RUN apt-get update \
     soap \
     opcache \
     intl \
+    exif \
 # Install mysql plugin
 &&  apt-get update \
  && apt-get install -fyqq mariadb-client libmariadbclient-dev \
@@ -57,8 +58,8 @@ RUN apt-get update \
  && apt-get remove libgmp-dev libgnutls28-dev libhashkit-dev libidn2-dev libmariadb-dev libp11-kit-dev libsasl2-dev libtasn1-6-dev nettle-dev -y \
  && apt-get update && apt upgrade -y && apt-get install procps -y
 
-# Install supervisor, cron, ssmtp mail
-RUN apt install supervisor cron -y \
+# Install supervisor, cron, ssmtp mail, ffmpeg
+RUN apt install supervisor cron ffmpeg -y \
     && echo 'deb http://deb.debian.org/debian stretch main' >> /etc/apt/sources.list \
     && apt update && apt install ssmtp -y && chfn -f "Laravel" root && chfn -f "Laravel" www-data && chmod -R a+r /etc/ssmtp \
     && mkdir /app
